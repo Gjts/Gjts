@@ -66,9 +66,3 @@
 
 ---
 
-## 动态效果（可选）
-启用 snake 动画后（需要 workflow），这里会显示贡献蛇：
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Gjts/Gjts/output/github-contribution-grid-snake-dark.svg" alt="snake animation" />
-</div>
