@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050816"/>
+      <stop offset="0.55" stop-color="#0B0F19"/>
+      <stop offset="1" stop-color="#09031a"/>
+    </linearGradient>
+
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#00F5FF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00F5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FF2BD6" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FF2BD6" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowViolet" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="1"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style><![CDATA[
+      .grid { opacity: .18; }
+      .p { filter:url(#softGlow); opacity: .9; }
+      .s1 { animation: float1 7s ease-in-out infinite; }
+      .s2 { animation: float2 9s ease-in-out infinite; }
+      .s3 { animation: float3 11s ease-in-out infinite; }
+      @keyframes float1 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(0,-10px) } }
+      @keyframes float2 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(0,12px) } }
+      @keyframes float3 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(0,-6px) } }
+    ]]></style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="260" fill="url(#bg)"/>
+
+  <!-- subtle grid -->
+  <g class="grid" stroke="#2a2f45" stroke-width="1">
+    <path d="M0 210 H1200"/>
+    <path d="M0 160 H1200"/>
+    <path d="M0 110 H1200"/>
+    <path d="M0 60 H1200"/>
+    <path d="M150 0 V260"/>
+    <path d="M300 0 V260"/>
+    <path d="M450 0 V260"/>
+    <path d="M600 0 V260"/>
+    <path d="M750 0 V260"/>
+    <path d="M900 0 V260"/>
+    <path d="M1050 0 V260"/>
+  </g>
+
+  <!-- particles (glow blobs) -->
+  <g>
+    <circle class="p s1" cx="180" cy="90" r="38" fill="url(#glowCyan)"/>
+    <circle class="p s2" cx="320" cy="160" r="44" fill="url(#glowViolet)"/>
+    <circle class="p s3" cx="520" cy="110" r="52" fill="url(#glowPink)"/>
+    <circle class="p s1" cx="710" cy="150" r="42" fill="url(#glowCyan)"/>
+    <circle class="p s2" cx="900" cy="95" r="55" fill="url(#glowPink)"/>
+    <circle class="p s3" cx="1060" cy="155" r="46" fill="url(#glowViolet)"/>
+  </g>
+
+  <!-- thin neon line -->
+  <path d="M0 200 C200 160, 380 235, 600 190 S980 160, 1200 205"
+        fill="none" stroke="#00F5FF" stroke-opacity=".35" stroke-width="2"/>
+</svg>
